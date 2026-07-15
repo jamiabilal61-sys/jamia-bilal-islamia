@@ -1,18 +1,22 @@
 export default function MissionVision() {
   return (
-    <section className="bg-slate-50 py-24">
+    <section className="bg-slate-50 py-20">
 
       <div className="max-w-7xl mx-auto px-6">
 
         <div className="text-center mb-16">
 
-          <span className="text-blue-700 font-semibold">
-            ہمارا نصب العین
-          </span>
+          <h2 className="text-4xl font-bold text-blue-900">
 
-          <h2 className="text-5xl font-bold text-blue-900 mt-3">
-            مشن، ویژن اور اقدار
+            ہمارا مشن اور وژن
+
           </h2>
+
+          <p className="mt-4 text-gray-600">
+
+            قرآن و سنت کی روشنی میں علم، عمل اور کردار کی تعمیر
+
+          </p>
 
         </div>
 
@@ -20,21 +24,23 @@ export default function MissionVision() {
 
           {/* Mission */}
 
-          <div className="bg-white rounded-3xl shadow-lg p-10">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
 
-            <div className="text-5xl mb-6">
+            <div className="text-5xl mb-5">
               🎯
             </div>
 
-            <h3 className="text-3xl font-bold text-blue-900">
+            <h3 className="text-2xl font-bold mb-4">
+
               ہمارا مشن
+
             </h3>
 
-            <p className="text-gray-600 leading-9 mt-6">
+            <p className="text-gray-600 leading-8">
 
-              قرآن و سنت کی روشنی میں ایسے علماء،
-              حفاظ، مفتیانِ کرام اور باکردار نوجوان
-              تیار کرنا جو دین و ملت کی خدمت کریں۔
+              ایسے علماء، حفاظ اور طلبہ تیار کرنا جو
+              قرآن و سنت کی صحیح تعلیمات کو معاشرے تک
+              پہنچائیں۔
 
             </p>
 
@@ -42,21 +48,22 @@ export default function MissionVision() {
 
           {/* Vision */}
 
-          <div className="bg-white rounded-3xl shadow-lg p-10">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
 
-            <div className="text-5xl mb-6">
-              👁
+            <div className="text-5xl mb-5">
+              🌍
             </div>
 
-            <h3 className="text-3xl font-bold text-blue-900">
-              ہمارا ویژن
+            <h3 className="text-2xl font-bold mb-4">
+
+              ہمارا وژن
+
             </h3>
 
-            <p className="text-gray-600 leading-9 mt-6">
+            <p className="text-gray-600 leading-8">
 
-              ایسا عالمی اسلامی تعلیمی ادارہ بننا
-              جو دینی اور عصری علوم میں بہترین
-              رہنمائی فراہم کرے۔
+              دینی اور عصری علوم کے امتزاج سے
+              ایک مثالی اسلامی تعلیمی ادارہ بننا۔
 
             </p>
 
@@ -64,21 +71,22 @@ export default function MissionVision() {
 
           {/* Values */}
 
-          <div className="bg-white rounded-3xl shadow-lg p-10">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
 
-            <div className="text-5xl mb-6">
+            <div className="text-5xl mb-5">
               ⭐
             </div>
 
-            <h3 className="text-3xl font-bold text-blue-900">
+            <h3 className="text-2xl font-bold mb-4">
+
               ہماری اقدار
+
             </h3>
 
-            <p className="text-gray-600 leading-9 mt-6">
+            <p className="text-gray-600 leading-8">
 
-              اخلاص، تقویٰ، تحقیق،
-              حسنِ اخلاق، اعتدال اور
-              خدمتِ خلق ہماری بنیادی اقدار ہیں۔
+              اخلاص، تقویٰ، دیانت، تحقیق،
+              اعتدال اور خدمتِ خلق۔
 
             </p>
 

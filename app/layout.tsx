@@ -3,6 +3,11 @@ import { Noto_Sans_Arabic } from "next/font/google";
 
 import "@/styles/globals.css";
 
+import TopBar from "@/components/layout/TopBar";
+import Header from "@/components/layout/Header";
+import Navigation from "@/components/layout/Navigation";
+import Footer from "@/components/layout/Footer";
+
 const notoSansArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["400", "500", "700"],
@@ -16,13 +21,25 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="ur" dir="rtl">
       <body className={notoSansArabic.className}>
-        {children}
+
+        <TopBar />
+
+        <Header />
+
+        <Navigation />
+
+        <main>
+          {children}
+        </main>
+
+        <Footer />
+
       </body>
     </html>
   );

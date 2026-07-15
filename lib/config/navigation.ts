@@ -6,7 +6,6 @@ export const navigation = [
 
   {
     title: "جامعہ",
-    href: "#",
     children: [
       {
         title: "تعارف",
@@ -28,46 +27,32 @@ export const navigation = [
   },
 
   {
-    title: "تعلیم",
-
-    href: "#",
-
-    children: [
-      {
-        title: "داخلہ",
-
-        href: "/admissions",
-      },
-
-      {
-        title: "اساتذہ",
-
-        href: "/faculty",
-      },
-
-      {
-        title: "طلبہ",
-
-        href: "/students",
-      },
-    ],
-  },
-
-  {
     title: "شعبہ جات",
-
     href: "/departments",
   },
 
   {
-    title: "لائبریری",
+    title: "داخلہ",
+    href: "/admissions",
+  },
 
+  {
+    title: "اساتذہ",
+    href: "/faculty",
+  },
+
+  {
+    title: "طلبہ",
+    href: "/students",
+  },
+
+  {
+    title: "لائبریری",
     href: "/library",
   },
 
   {
     title: "رابطہ",
-
     href: "/contact",
   },
-];
+] as const;

@@ -3,7 +3,7 @@ export const partners = [
     id: 1,
     name: "وفاق المدارس السلفیہ پاکستان",
     type: "امتحانی و تعلیمی الحاق",
-    logo: "/partners/wms.png",
+    logo: "/partners/wifaq.png",
     description:
       "جامعہ کا الحاق وفاق المدارس السلفیہ پاکستان سے ہے، جس کے تحت نصاب، امتحانات اور اسناد کا نظام چلتا ہے۔",
   },
@@ -12,7 +12,7 @@ export const partners = [
     id: 2,
     name: "جامعہ اسلامیہ مدینہ منورہ",
     type: "بین الاقوامی تعلیمی روابط",
-    logo: "/partners/madina.png",
+    logo: "/partners/madinah.png",
     description:
       "نمایاں طلبہ کو جامعہ اسلامیہ مدینہ منورہ میں اعلیٰ تعلیم کے مواقع اور داخلوں کے حصول میں رہنمائی فراہم کی جاتی ہے۔",
   },

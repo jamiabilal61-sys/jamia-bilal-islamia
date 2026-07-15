@@ -1,23 +1,33 @@
-import PageHeader from "@/components/common/PageHeader";
-import AboutIntro from "@/components/about/AboutIntro";
-import MissionVision from "@/components/about/MissionVision";
-import Timeline from "@/components/about/Timeline";
+import Hero from "@/components/home/Hero";
+import QuickLinks from "@/components/home/QuickLinks";
+import RectorMessage from "@/components/home/RectorMessage";
+import LatestNews from "@/components/home/LatestNews";
+import Departments from "@/components/home/Departments";
+import AdmissionsBanner from "@/components/home/AdmissionsBanner";
+import Statistics from "@/components/home/Statistics";
+import Faculty from "@/components/home/Faculty";
+import Gallery from "@/components/home/Gallery";
 
-export default function AboutPage() {
+export default function HomePage() {
   return (
     <main>
+      <Hero />
 
-      <PageHeader
-        title="جامعہ کا تعارف"
-        subtitle="علم، عمل اور اخلاق کا عظیم گہوارہ"
-      />
+      <QuickLinks />
 
-      <AboutIntro />
+      <RectorMessage />
 
-      <MissionVision />
+      <LatestNews />
 
-      <Timeline />
+      <Departments />
 
+      <AdmissionsBanner />
+
+      <Statistics />
+
+      <Faculty />
+
+      <Gallery />
     </main>
   );
 }

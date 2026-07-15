@@ -1,55 +1,83 @@
 export default function Statistics() {
+  const stats = [
+    {
+      id: 1,
+      icon: "👨‍🎓",
+      value: "3200+",
+      title: "طلبہ",
+      color: "text-blue-700",
+    },
+    {
+      id: 2,
+      icon: "👨‍🏫",
+      value: "85",
+      title: "اساتذۂ کرام",
+      color: "text-green-700",
+    },
+    {
+      id: 3,
+      icon: "🏛️",
+      value: "14",
+      title: "شعبہ جات",
+      color: "text-yellow-600",
+    },
+    {
+      id: 4,
+      icon: "🎓",
+      value: "950+",
+      title: "فضلاء",
+      color: "text-red-600",
+    },
+  ];
+
   return (
-    <section className="bg-white py-12">
+    <section className="py-20 bg-gradient-to-r from-slate-50 to-blue-50">
+      <div className="max-w-7xl mx-auto px-6">
 
-      <div className="max-w-6xl mx-auto">
+        <div className="text-center mb-14">
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <span className="text-green-700 font-semibold">
+            جامعہ ایک نظر میں
+          </span>
 
-          <div>
-            <h2 className="text-5xl font-bold text-blue-700">
-              3200+
-            </h2>
+          <h2 className="text-4xl font-bold text-blue-900 mt-3">
+            ہمارے اہم اعداد و شمار
+          </h2>
 
-            <p className="mt-2 text-gray-600">
-              طلبہ
-            </p>
-          </div>
+          <p className="text-gray-600 mt-4">
+            جامعہ بلال الاسلامیہ لاہور کی چند نمایاں جھلکیاں
+          </p>
 
-          <div>
-            <h2 className="text-5xl font-bold text-green-700">
-              85
-            </h2>
+        </div>
 
-            <p className="mt-2 text-gray-600">
-              اساتذہ
-            </p>
-          </div>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
-          <div>
-            <h2 className="text-5xl font-bold text-yellow-600">
-              14
-            </h2>
+          {stats.map((item) => (
 
-            <p className="mt-2 text-gray-600">
-              شعبہ جات
-            </p>
-          </div>
+            <div
+              key={item.id}
+              className="bg-white rounded-3xl shadow-md hover:shadow-2xl transition duration-300 hover:-translate-y-2 p-8 text-center"
+            >
 
-          <div>
-            <h2 className="text-5xl font-bold text-red-600">
-              950+
-            </h2>
+              <div className="text-5xl">
+                {item.icon}
+              </div>
 
-            <p className="mt-2 text-gray-600">
-              فضلاء
-            </p>
-          </div>
+              <h3 className={`text-5xl font-bold mt-6 ${item.color}`}>
+                {item.value}
+              </h3>
+
+              <p className="mt-4 text-gray-600 text-lg">
+                {item.title}
+              </p>
+
+            </div>
+
+          ))}
 
         </div>
 
       </div>
-
     </section>
   );
 }

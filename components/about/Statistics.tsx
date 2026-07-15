@@ -1,44 +1,54 @@
+const stats = [
+  {
+    number: "1500+",
+    title: "طلبہ",
+    icon: "👨‍🎓",
+  },
+  {
+    number: "80+",
+    title: "اساتذہ",
+    icon: "👨‍🏫",
+  },
+  {
+    number: "25+",
+    title: "شعبہ جات",
+    icon: "🏛️",
+  },
+  {
+    number: "500+",
+    title: "فارغین",
+    icon: "📚",
+  },
+];
+
 export default function Statistics() {
-  const stats = [
-    {
-      number: "10+",
-      title: "سال کا تجربہ",
-    },
-    {
-      number: "1000+",
-      title: "طلبہ",
-    },
-    {
-      number: "30+",
-      title: "اساتذہ",
-    },
-    {
-      number: "10+",
-      title: "شعبہ جات",
-    },
-  ];
-
   return (
-    <section className="bg-blue-900 py-20">
+    <section className="bg-blue-900 text-white py-20">
 
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
 
-          {stats.map((item, index) => (
+          {stats.map((item) => (
 
             <div
-              key={index}
-              className="text-center text-white"
+              key={item.title}
+              className="text-center"
             >
 
-              <h2 className="text-5xl font-bold text-yellow-400">
+              <div className="text-5xl mb-4">
+
+                {item.icon}
+
+              </div>
+
+              <h2 className="text-4xl font-bold">
 
                 {item.number}
 
               </h2>
 
-              <p className="mt-4 text-xl">
+              <p className="mt-2 text-lg">
 
                 {item.title}
 

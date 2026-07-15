@@ -1,65 +1,69 @@
-import { leadership } from "@/lib/leadership";
+import Image from "next/image";
+import { leadership } from "@/data/leadership";
 
 export default function Leadership() {
   return (
-    <section className="bg-white py-24">
+    <section className="py-24 bg-white">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="text-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
 
-          <span className="text-blue-700 font-semibold">
-            انتظامیہ
-          </span>
+          {/* Image */}
 
-          <h2 className="text-5xl font-bold text-blue-900 mt-3">
-            قیادتِ جامعہ
-          </h2>
+          <div>
 
-          <p className="text-gray-600 mt-5 max-w-2xl mx-auto leading-8">
-            جامعہ بلال الاسلامیہ لاہور کی علمی و انتظامی قیادت
-          </p>
+            <Image
+              src={leadership.image}
+              alt={leadership.name}
+              width={500}
+              height={600}
+              className="rounded-2xl shadow-xl w-full"
+            />
 
-        </div>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          {/* Content */}
 
-          {leadership.map((leader) => (
+          <div>
 
-            <div
-              key={leader.id}
-              className="bg-white rounded-3xl overflow-hidden shadow-lg border border-slate-100 hover:-translate-y-2 hover:shadow-2xl transition-all duration-500"
-            >
+            <span className="text-blue-700 font-bold">
 
-              <img
-                src={leader.image}
-                alt={leader.name}
-                className="w-full h-80 object-cover"
-              />
+              پیغامِ مہتمم
 
-              <div className="p-8">
+            </span>
 
-                <span className="inline-block bg-blue-100 text-blue-700 px-4 py-1 rounded-full text-sm font-semibold">
-                  {leader.position}
-                </span>
+            <h2 className="text-4xl font-bold mt-4">
 
-                <h3 className="text-2xl font-bold text-blue-900 mt-5">
-                  {leader.name}
-                </h3>
+              {leadership.name}
 
-                <p className="text-gray-600 leading-8 mt-5">
-                  {leader.description}
-                </p>
+            </h2>
 
-                <button className="mt-8 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-xl transition">
-                  مکمل تعارف
-                </button>
+            <p className="text-gray-500 mt-2">
 
-              </div>
+              {leadership.designation}
 
-            </div>
+            </p>
 
-          ))}
+            <p className="mt-8 leading-9 text-gray-700 whitespace-pre-line">
+
+              {leadership.message}
+
+            </p>
+
+            <p className="mt-10 font-bold text-blue-900">
+
+              {leadership.signature}
+
+            </p>
+
+            <button className="mt-8 bg-blue-700 hover:bg-blue-800 text-white px-6 py-3 rounded-lg transition">
+
+              مکمل پیغام
+
+            </button>
+
+          </div>
 
         </div>
 

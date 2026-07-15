@@ -1,49 +1,73 @@
+import Image from "next/image";
 import Link from "next/link";
-import { navigation } from "@/lib/navigation";
 import { siteConfig } from "@/lib/site";
 
 export default function Header() {
   return (
-    <header className="bg-white shadow-md sticky top-0 z-50">
+    <header className="bg-white shadow-sm">
 
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="flex items-center justify-between h-20">
+        <div className="h-24 flex items-center justify-between">
 
-          {/* لوگو */}
-
-          <Link href="/" className="text-2xl font-bold text-blue-900">
-
-            {siteConfig.nameUr}
-
-          </Link>
-
-          {/* Menu */}
-
-          <nav className="hidden lg:flex items-center gap-8">
-
-            {navigation.map((item) => (
-
-              <Link
-                key={item.href}
-                href={item.href}
-                className="text-gray-700 hover:text-blue-700 font-medium transition"
-              >
-                {item.title}
-              </Link>
-
-            ))}
-
-          </nav>
-
-          {/* Portal Button */}
+          {/* Logo + Name */}
 
           <Link
-            href="/login"
-            className="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition"
+            href="/"
+            className="flex items-center gap-4"
           >
-            پورٹل
+
+            <Image
+              src={siteConfig.logo}
+              alt={siteConfig.nameEn}
+              width={60}
+              height={60}
+              priority
+            />
+
+            <div>
+
+              <h1 className="text-2xl font-bold text-blue-900">
+
+                {siteConfig.nameUr}
+
+              </h1>
+
+              <p className="text-sm text-gray-600">
+
+                {siteConfig.tagline}
+
+              </p>
+
+            </div>
+
           </Link>
+
+          {/* Right Side */}
+
+          <div className="flex items-center gap-3">
+
+            <button
+              className="border rounded-lg px-4 py-2 hover:bg-gray-100"
+            >
+              🔍 تلاش
+            </button>
+
+            <Link
+              href="/admissions"
+              className="bg-yellow-500 text-white px-5 py-2 rounded-lg hover:bg-yellow-600 transition"
+            >
+              داخلہ
+            </Link>
+
+            <Link
+              href="/login"
+              className="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition"
+            >
+              پورٹل
+            </Link>
+
+          </div>
 
         </div>
 
