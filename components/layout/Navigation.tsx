@@ -61,7 +61,7 @@ export default function Navigation() {
                 {"children" in item && (
                   <div className="absolute right-0 top-full invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-300 min-w-64 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden">
 
-                    {item.children.map((child) => (
+                    {item.children && item.children.map((child) => (
                       <Link
                         key={child.href}
                         href={child.href}
