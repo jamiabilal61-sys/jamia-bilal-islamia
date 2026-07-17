@@ -1,12 +1,35 @@
 import { NextResponse } from "next/server";
+import clientPromise from "@/lib/mongodb";
 
 export async function POST(request: Request) {
-  const body = await request.json();
+  try {
+    const body = await request.json();
 
-  console.log("Admission Form:", body);
+    const client = await clientPromise;
 
-  return NextResponse.json({
-    success: true,
-    message: "فارم کامیابی سے موصول ہوگیا۔",
-  });
+    const db = client.db("jamia-bilal");
+
+    const result = await db.collection("admissions").insertOne({
+      ...body,
+      createdAt: new Date(),
+    });
+
+    return NextResponse.json({
+      success: true,
+      message: "فارم کامیابی سے محفوظ ہوگیا۔",
+      id: result.insertedId,
+    });
+  } catch (error) {
+    console.error("MongoDB Error:", error);
+
+    return NextResponse.json(
+      {
+        success: false,
+        message: "ڈیٹا محفوظ نہیں ہو سکا۔",
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }
