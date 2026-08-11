@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -113,15 +114,19 @@ export default function Footer() {
               </p>
 
               <p>
-                ☎ 042-37651234
+                ☎ {siteConfig.phone}
               </p>
 
               <p>
-                📱 0300-1234567
+                ✉ <a href={`mailto:${siteConfig.email}`} className="hover:text-yellow-400" dir="ltr">{siteConfig.email}</a>
               </p>
 
               <p>
-                ✉ jamiabilal61@gmail.com
+                <span className="flex flex-wrap gap-3">
+                  <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" className="hover:text-yellow-400">Facebook</a>
+                  <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="hover:text-yellow-400">Instagram</a>
+                  <a href={siteConfig.social.x} target="_blank" rel="noreferrer" className="hover:text-yellow-400">X</a>
+                </span>
               </p>
 
             </div>

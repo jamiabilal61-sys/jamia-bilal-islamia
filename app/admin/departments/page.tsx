@@ -1,0 +1,1 @@
+export default function Page(){return <section className="rounded-2xl bg-white p-8 shadow-sm"><h1 className="text-3xl font-black text-blue-950">شعبہ جات کا انتظام</h1><p className="mt-4 leading-8 text-slate-600">شعبہ جات کے ریکارڈ، نصاب اور متعلقہ طلبہ کی تنظیم اس حصے سے کی جائے گی۔ موجودہ طلبہ کے شعبے طلبہ مینجمنٹ میں دستیاب ہیں۔</p></section>}

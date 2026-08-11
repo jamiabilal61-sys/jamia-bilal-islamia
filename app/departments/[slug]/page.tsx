@@ -1,10 +1,11 @@
 type Props = {
-  params: {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default function DepartmentDetails({ params }: Props) {
+export default async function DepartmentDetails({ params }: Props) {
+  const { slug } = await params;
   return (
     <main className="py-24">
 
@@ -12,7 +13,7 @@ export default function DepartmentDetails({ params }: Props) {
 
         <h1 className="text-5xl font-bold text-blue-900">
 
-          {params.slug}
+          {decodeURIComponent(slug)}
 
         </h1>
 

@@ -16,15 +16,19 @@ export default function TopBar() {
             ☎ {siteConfig.phone}
           </span>
 
-          <span>
-            📱 {siteConfig.mobile}
-          </span>
+          <a href={`mailto:${siteConfig.email}`} className="hover:text-yellow-300 transition" dir="ltr">
+            ✉ {siteConfig.email}
+          </a>
 
         </div>
 
         {/* Left */}
 
         <div className="flex flex-wrap items-center gap-5">
+
+          <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" className="hover:text-yellow-300">Facebook</a>
+          <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="hover:text-yellow-300">Instagram</a>
+          <a href={siteConfig.social.x} target="_blank" rel="noreferrer" className="hover:text-yellow-300">X</a>
 
           <span className="text-yellow-300">
             صبح بخیر! (صبح بخیر و برکت)

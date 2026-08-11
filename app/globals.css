@@ -8,5 +8,12 @@ html {
 body {
   background: var(--background);
   color: var(--text);
-  font-family: var(--font-family);
+  font-family: var(--font-urdu), "Jameel Noori Nastaleeq", serif;
+  line-height: 1.9;
+}
+@media print {
+  body * { visibility: hidden !important; }
+  #pay-slip, #pay-slip * { visibility: visible !important; }
+  #pay-slip { position: absolute; inset: 0; max-width: none; width: 100%; box-shadow: none; }
+  .no-print { display: none !important; }
 }

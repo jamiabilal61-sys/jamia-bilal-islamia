@@ -25,7 +25,7 @@ export default function CallToAction() {
         <div className="flex flex-col md:flex-row justify-center gap-5 mt-12">
 
           <Link
-            href="/admission"
+            href="/admissions"
             className="
             bg-yellow-400
             hover:bg-yellow-300
@@ -41,7 +41,7 @@ export default function CallToAction() {
           </Link>
 
           <Link
-            href="/guardian"
+            href="/portal/login"
             className="
             border-2
             border-white

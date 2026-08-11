@@ -73,7 +73,7 @@ export default function Footer() {
 
               <li>
 
-                <Link href="/admission">
+                <Link href="/admissions">
                   داخلہ
                 </Link>
 

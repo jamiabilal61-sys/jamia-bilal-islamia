@@ -1,3 +1,5 @@
+import { siteConfig } from "@/lib/site";
+
 export default function ContactInfo() {
   const contacts = [
     {
@@ -7,17 +9,17 @@ export default function ContactInfo() {
     },
     {
       title: "فون",
-      value: "042-37651234",
+      value: siteConfig.phone,
       icon: "☎️",
     },
     {
       title: "موبائل",
-      value: "0300-1234567",
+      value: siteConfig.mobile,
       icon: "📱",
     },
     {
       title: "ای میل",
-      value: "info@jamiabilal.edu.pk",
+      value: siteConfig.email,
       icon: "✉️",
     },
   ];
@@ -64,6 +66,15 @@ export default function ContactInfo() {
             </div>
           ))}
 
+        </div>
+
+        <div className="mt-12 rounded-3xl bg-blue-950 px-6 py-8 text-center text-white">
+          <h3 className="text-2xl font-bold">سوشل میڈیا پر رابطہ</h3>
+          <div className="mt-6 flex flex-wrap justify-center gap-4" dir="ltr">
+            <a href={siteConfig.social.facebook} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-6 py-3 font-bold text-blue-900 transition hover:bg-yellow-400">Facebook</a>
+            <a href={siteConfig.social.instagram} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-6 py-3 font-bold text-blue-900 transition hover:bg-yellow-400">Instagram</a>
+            <a href={siteConfig.social.x} target="_blank" rel="noreferrer" className="rounded-xl bg-white px-6 py-3 font-bold text-blue-900 transition hover:bg-yellow-400">X</a>
+          </div>
         </div>
 
       </div>

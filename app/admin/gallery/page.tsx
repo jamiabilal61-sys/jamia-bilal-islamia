@@ -1,0 +1,1 @@
+export default function Page(){return <section className="rounded-2xl bg-white p-8 shadow-sm"><h1 className="text-3xl font-black text-blue-950">میڈیا گیلری</h1><p className="mt-4 leading-8 text-slate-600">جامعہ کی تصاویر اور میڈیا مواد کے انتظام کا مرکزی صفحہ۔ نئی تصویر اپلوڈ کرنے کی سہولت میڈیا اسٹوریج منسلک ہونے کے بعد فعال ہوگی۔</p></section>}

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { siteConfig } from "@/lib/site";
 
 export default function AdmissionsBanner() {
   return (
@@ -68,12 +69,12 @@ export default function AdmissionsBanner() {
 
                 <div className="flex justify-between border-b border-white/20 pb-3">
                   <span>رابطہ</span>
-                  <strong>+92-42-XXXXXXX</strong>
+                  <strong dir="ltr">{siteConfig.phone}</strong>
                 </div>
 
                 <div className="flex justify-between">
                   <span>ای میل</span>
-                  <strong>jamiabilal61@gmail.com</strong>
+                  <strong dir="ltr">{siteConfig.email}</strong>
                 </div>
 
               </div>

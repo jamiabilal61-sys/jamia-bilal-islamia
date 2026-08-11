@@ -27,7 +27,7 @@ export default function Hero() {
             بسم اللہ الرحمن الرحیم
           </p>
 
-          <h1 className="text-5xl lg:text-7xl font-bold leading-tight text-white">
+          <h1 className="whitespace-nowrap text-[clamp(1.75rem,4.4vw,4.5rem)] font-bold leading-[1.6] text-white">
             {siteConfig.nameUr}
           </h1>
 

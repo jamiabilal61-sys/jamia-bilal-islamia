@@ -54,13 +54,13 @@ export const siteConfig = {
 
   postalCode: "54000",
 
-  phone: "042-37651234",
+  phone: "03212222981",
 
-  mobile: "0300-1234567",
+  mobile: "03212222981",
 
-  whatsapp: "923001234567",
+  whatsapp: "923212222981",
 
-  email: "info@jamiabilal.edu.pk",
+  email: "jbicforboys981@gmail.com",
 
   website: "https://jamiabilal.edu.pk",
 
@@ -99,13 +99,13 @@ export const siteConfig = {
   // ========================================================
 
   social: {
-    facebook: "",
+    facebook: "https://www.facebook.com/MadarikeFikr",
 
     youtube: "",
 
-    instagram: "",
+    instagram: "https://www.instagram.com/madarikefikr/",
 
-    x: "",
+    x: "https://x.com/MadarikeFikr",
 
     linkedin: "",
 

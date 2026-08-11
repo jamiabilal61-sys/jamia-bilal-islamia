@@ -14,7 +14,7 @@ export default function Header() {
 
           <Link
             href="/"
-            className="flex items-center gap-4"
+            className="flex min-w-0 items-center gap-3 lg:gap-4"
           >
 
             <Image
@@ -25,9 +25,9 @@ export default function Header() {
               priority
             />
 
-            <div>
+            <div className="min-w-0">
 
-              <h1 className="text-2xl font-bold text-blue-900">
+              <h1 className="whitespace-nowrap text-lg font-bold leading-relaxed text-blue-900 sm:text-xl xl:text-2xl">
 
                 {siteConfig.nameUr}
 
@@ -61,7 +61,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/login"
+              href="/portal/login"
               className="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800 transition"
             >
               پورٹل

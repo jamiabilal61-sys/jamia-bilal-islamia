@@ -5,13 +5,13 @@ const actions = [
     title: "آن لائن داخلہ",
     description: "گھر بیٹھے داخلہ فارم جمع کروائیں۔",
     icon: "🎓",
-    link: "/admission",
+    link: "/admissions",
   },
   {
     title: "سرپرست پورٹل",
     description: "اپنے بچے کی کارکردگی دیکھیں۔",
     icon: "👨‍👩‍👦",
-    link: "/guardian",
+    link: "/portal/login",
   },
   {
     title: "دارالافتاء",

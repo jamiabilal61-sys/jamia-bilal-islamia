@@ -6,7 +6,6 @@ export default function StatusBadge({
   status,
 }: StatusBadgeProps) {
   let bg = "";
-  let text = "";
 
   switch (status) {
     case "منظور":

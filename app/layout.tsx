@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_Arabic } from "next/font/google";
+import { Noto_Nastaliq_Urdu } from "next/font/google";
 
 import "@/styles/globals.css";
 
@@ -8,10 +8,11 @@ import Header from "@/components/layout/Header";
 import Navigation from "@/components/layout/Navigation";
 import Footer from "@/components/layout/Footer";
 
-const notoSansArabic = Noto_Sans_Arabic({
+const notoNastaliqUrdu = Noto_Nastaliq_Urdu({
   subsets: ["arabic"],
-  weight: ["400", "500", "700"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
+  variable: "--font-urdu",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +27,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ur" dir="rtl">
-      <body className={notoSansArabic.className}>
+      <body className={`${notoNastaliqUrdu.variable} ${notoNastaliqUrdu.className}`}>
 
         <TopBar />
 
