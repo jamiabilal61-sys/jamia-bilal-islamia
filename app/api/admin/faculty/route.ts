@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { activeAcademicSession, adminDb, isAuthorizedAdmin } from "@/lib/admin-db";
+import { jamiaBilalSchedule } from "@/lib/jamia-bilal-schedule";
 
 export const runtime = "nodejs";
 
@@ -51,6 +52,64 @@ export async function POST(request: NextRequest) {
       }, { onConflict: "academic_session,department,class_name,subject_name" });
       if (error) throw error;
       return NextResponse.json({ success: true, message: "تدریسی ضرورت محفوظ ہوگئی۔" });
+    }
+    if (body.action === "period") {
+      if (!body.academicSession || !body.department?.trim() || !body.className?.trim() || !body.subjectName?.trim() || !body.teacherId) {
+        return NextResponse.json({ success: false, message: "سیشن، جماعت، مضمون اور استاد ضروری ہیں۔" }, { status: 400 });
+      }
+      const row = {
+        academic_session: body.academicSession,
+        department: body.department.trim(),
+        class_name: body.className.trim(),
+        subject_name: body.subjectName.trim(),
+        teacher_id: body.teacherId,
+        day_number: Math.max(1, Math.min(6, Number(body.dayNumber))),
+        period_number: Math.max(1, Math.min(8, Number(body.periodNumber))),
+      };
+      const { error } = await db.from("timetable_periods").upsert(row, {
+        onConflict: "academic_session,department,class_name,day_number,period_number",
+      });
+      if (error) throw error;
+      return NextResponse.json({ success: true, message: "پیریڈ ٹائم ٹیبل میں محفوظ ہوگیا۔" });
+    }
+    if (body.action === "import_jamia_schedule") {
+      const academicSession = String(body.academicSession || "2025-26");
+      const teacherNames = Array.from(new Set(jamiaBilalSchedule.map((cell) => cell.teacherName)));
+      for (const teacherName of teacherNames) {
+        const { data: existing, error: lookupError } = await db.from("faculty_members").select("id").eq("teacher_name", teacherName).limit(1);
+        if (lookupError) throw lookupError;
+        if (existing?.length) continue;
+        const { error } = await db.from("faculty_members").insert({
+          teacher_name: teacherName,
+          qualification: "",
+          specialization: "",
+          teachable_subjects: [],
+          available_days: [1, 2, 3, 4, 5, 6],
+          max_periods_daily: 8,
+          max_periods_weekly: 48,
+          employment_type: "کل وقتی",
+          status: "فعال",
+          updated_at: new Date().toISOString(),
+        });
+        if (error) throw error;
+      }
+      const { data: faculty, error: facultyError } = await db.from("faculty_members").select("id,teacher_name").in("teacher_name", teacherNames);
+      if (facultyError) throw facultyError;
+      const teacherIds = new Map((faculty ?? []).map((teacher) => [teacher.teacher_name, teacher.id]));
+      const rows = jamiaBilalSchedule.flatMap((cell) => [1, 2, 3, 4, 5, 6].map((dayNumber) => ({
+        academic_session: academicSession,
+        department: cell.department,
+        class_name: cell.className,
+        subject_name: cell.subjectName,
+        teacher_id: teacherIds.get(cell.teacherName),
+        day_number: dayNumber,
+        period_number: cell.periodNumber,
+      })));
+      const { error: deleteError } = await db.from("timetable_periods").delete().eq("academic_session", academicSession);
+      if (deleteError) throw deleteError;
+      const { error: insertError } = await db.from("timetable_periods").insert(rows);
+      if (insertError) throw insertError;
+      return NextResponse.json({ success: true, message: `PDF کے مطابق ${rows.length} پیریڈ درج ہوگئے۔` });
     }
     return NextResponse.json({ success: false, message: "درخواست درست نہیں۔" }, { status: 400 });
   } catch (error) {
